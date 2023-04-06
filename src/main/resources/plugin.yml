@@ -1,0 +1,15 @@
+# Basic Credentials
+name: DeltaPunishments
+version: ${project.version}
+main: games.negative.punishments.DeltaPunishments
+description: GUI and Stack based plugin!
+
+# List of Contributors
+authors: [ "Negative" ]
+
+# API Version for Modern Spigot
+api-version: 1.13
+
+# Dependencies
+depend: [ LiteBans ]
+softdepend: [ floodgate ]

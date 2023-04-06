@@ -1,0 +1,65 @@
+HACKING: # Unique ID
+  reason: 'Hacking #%offense% Offense' # Reason to be displayed in the ban screen
+  forgiveness: "100d" # Time to forgive the player
+  table:
+    FIRST: # Unique Identifier for Table
+      type: BAN
+      duration: "30d"
+      permission: "punishments.execute.hacking.first" # Permission node to execute this executable
+      commands: # Commands to be executed after the punishment is executed
+        # - "lp user %player% parent remove VIP" # Removes VIP rank from player on first offense
+
+    SECOND: # Unique ID
+      type: BAN
+      duration: "60d"
+      permission: "punishments.execute.hacking.second"
+      commands:
+        # - "lp user %player% parent remove MVP" # Removes MVP rank from player on second offense
+
+    THIRD: # Unique ID
+      type: BAN
+      duration: "perm"
+      #permission: "punishments.execute.hacking.third"
+      # If no entry is here it will use the previous iteration's permission node
+      # and if there is no previous iteration it will not have a permission node.
+      commands:
+        # - "lp user %player% parent remove MVP+" # Removes MVP+ rank from player on third offense
+
+SPAM:
+  reason: 'Spamming #%offense% Offense'
+  forgiveness: "60d"
+  table:
+    FIRST:
+      type: WARN
+
+    SECOND:
+      type: MUTE
+      duration: "30m"
+
+    THIRD:
+      type: MUTE
+      duration: "1h"
+
+    FOURTH:
+      type: MUTE
+      duration: "12h"
+
+    FIFTH:
+      type: MUTE
+      duration: "1d"
+
+    SIXTH:
+      type: MUTE
+      duration: "7d"
+
+    SEVENTH:
+      type: MUTE
+      duration: "14d"
+
+    EIGHTH:
+      type: MUTE
+      duration: "30d"
+
+    NINTH:
+      type: MUTE
+      duration: "perm"
