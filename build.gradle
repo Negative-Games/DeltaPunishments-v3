@@ -26,20 +26,23 @@ repositories {
 
 dependencies {
     // Annotations
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    compileOnly 'org.jetbrains:annotations:22.0.0'
+    compileOnly("org.projectlombok:lombok:1.18.22")
+    annotationProcessor("org.projectlombok:lombok:1.18.22")
+
+    compileOnly("org.jetbrains:annotations:22.0.0")
+    annotationProcessor("org.jetbrains:annotations:22.0.0")
 
     // Apis
-    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
-    compileOnly 'com.gitlab.ruany:LiteBansAPI:0.3.5'
-    compileOnly 'org.geysermc.floodgate:api:2.0-SNAPSHOT'
+    compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
+    compileOnly("com.gitlab.ruany:LiteBansAPI:0.3.5")
+    compileOnly("org.geysermc.floodgate:api:2.0-SNAPSHOT")
 
     // Framework / Backend
-    implementation 'games.negative.framework:minecraft-framework:3.2.3'
+    implementation("games.negative.framework:minecraft-framework:3.2.5")
 
 }
 
-def targetJavaVersion = 8
+def targetJavaVersion = 17
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
@@ -76,5 +79,5 @@ shadowJar {
     archiveVersion.set("")
 
     // Shade "games.negative.framework" into "games.negative.punishments.libs.framework"
-    relocate "games.negative.framework", "${group}.libs.framework"
+    relocate("games.negative.framework", "${group}.libs.framework")
 }
